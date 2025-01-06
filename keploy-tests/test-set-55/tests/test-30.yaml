@@ -1,0 +1,76 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-30
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8083/query
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip,deflate,br
+            Accept-Language: en-GB,en
+            Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IiIsImVtYWlsIjoicml0aWtAa2VwbG95LmlvIiwicm9sZSI6IlVTRVIiLCJzdGF0dXMiOiJBQ1RJVkUiLCJjaWQiOiJrZXBsb3kuaW8ifQ.8h7vmDVnvOgHvoDL6zdl1b4r2vLEvqLHha72LslHrhk
+            Connection: keep-alive
+            Content-Length: "163"
+            Content-Type: application/json
+            Host: localhost:8083
+            Keploy-Test-Id: test-30
+            Keploy-Test-Set-Id: test-set-40
+            Origin: http://localhost:8000
+            Referer: http://localhost:8000/
+            Sec-Ch-Ua: '"Brave";v="119","Chromium";v="119","Not?A_Brand";v="24"'
+            Sec-Ch-Ua-Mobile: ?0
+            Sec-Ch-Ua-Platform: '"macOS"'
+            Sec-Fetch-Dest: empty
+            Sec-Fetch-Mode: cors
+            Sec-Fetch-Site: same-site
+            Sec-Gpc: "1"
+            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML
+        body: '{"operationName":"users","variables":{},"query":"query users {\n  users {\n    id\n    name\n    email\n    role\n    apiKey\n    createdBy\n    status\n  }\n}\n"}'
+        timestamp: 2024-08-22T16:28:22.635870057+05:30
+    resp:
+        status_code: 200
+        header:
+            Access-Control-Allow-Credentials: "true"
+            Access-Control-Allow-Origin: '*'
+            Access-Control-Expose-Headers: Link
+            Content-Length: "95"
+            Content-Type: application/json
+            Date: Thu, 22 Aug 2024 10:58:22 GMT
+            Vary: Origin
+        body: '{"errors":[{"message":"failed to get company by cid: keploy.io","path":["users"]}],"data":null}'
+        status_message: OK
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-08-22T16:28:24.747377385+05:30
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1724324304
+curl: |-
+    curl --request POST \
+      --url http://localhost:8083/query \
+      --header 'Sec-Fetch-Site: same-site' \
+      --header 'Accept: */*' \
+      --header 'Sec-Ch-Ua-Platform: "macOS"' \
+      --header 'Sec-Fetch-Dest: empty' \
+      --header 'Host: localhost:8083' \
+      --header 'Accept-Language: en-GB,en' \
+      --header 'Accept-Encoding: gzip,deflate,br' \
+      --header 'Connection: keep-alive' \
+      --header 'Keploy-Test-Id: test-30' \
+      --header 'Keploy-Test-Set-Id: test-set-40' \
+      --header 'Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IiIsImVtYWlsIjoicml0aWtAa2VwbG95LmlvIiwicm9sZSI6IlVTRVIiLCJzdGF0dXMiOiJBQ1RJVkUiLCJjaWQiOiJrZXBsb3kuaW8ifQ.8h7vmDVnvOgHvoDL6zdl1b4r2vLEvqLHha72LslHrhk' \
+      --header 'Origin: http://localhost:8000' \
+      --header 'Content-Type: application/json' \
+      --header 'Sec-Gpc: 1' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML' \
+      --header 'Referer: http://localhost:8000/' \
+      --header 'Sec-Ch-Ua: "Brave";v="119","Chromium";v="119","Not?A_Brand";v="24"' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --data '{"operationName":"users","variables":{},"query":"query users {\n  users {\n    id\n    name\n    email\n    role\n    apiKey\n    createdBy\n    status\n  }\n}\n"}'
