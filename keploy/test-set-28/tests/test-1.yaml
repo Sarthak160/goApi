@@ -29,6 +29,8 @@ spec:
     objects: []
     assertions:
         noise:
+            body.latitude: []
+            body[0].type: []
             header.Date: []
     created: 1733255756
 curl: |
