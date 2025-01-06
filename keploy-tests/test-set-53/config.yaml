@@ -1,6 +1,0 @@
-preScript: ""
-postScript: ""
-template: {}
-mockRegistry:
-    mock: fa232ffc3e8854b53af0658a998fd171137ba2c2af2c85b17fae934b0018cf7c
-    app: api-server
