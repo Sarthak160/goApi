@@ -1,0 +1,78 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-16
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8083/query
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip,deflate,br,zstd
+            Accept-Language: en-GB,en
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IiIsImVtYWlsIjoic2FydGhha0BrZXBsb3kuaW8iLCJyb2xlIjoiQURNSU4iLCJzdGF0dXMiOiJBQ1RJVkUiLCJjaWQiOiJrZXBsb3kuaW8iLCJmZWF0dXJlRmxhZ3MiOnsiRU5URVJQUklTRV9DT05TT0xFIjp0cnVlfSwiZXhwIjoxNzIyMDEwMzY4fQ.2vZrCIYzF_d54JKjwk1aFee7d0naLfHJqkZTgbM9yD0
+            Connection: keep-alive
+            Content-Length: "699"
+            Content-Type: application/json
+            Host: localhost:8083
+            Keploy-Test-Id: test-23
+            Keploy-Test-Set-Id: newApp
+            Origin: http://localhost:3000
+            Referer: http://localhost:3000/
+            Sec-Ch-Ua: '"Not/A)Brand";v="8","Chromium";v="126","Brave";v="126"'
+            Sec-Ch-Ua-Mobile: ?0
+            Sec-Ch-Ua-Platform: '"macOS"'
+            Sec-Fetch-Dest: empty
+            Sec-Fetch-Mode: cors
+            Sec-Fetch-Site: same-site
+            Sec-Gpc: "1"
+            User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML
+        body: '{"operationName":"GetTestSetReports","variables":{"testReportId":"df24e41b-a3e9-46ed-bd8a-ec96cd5e6d6f"},"query":"query GetTestSetReports($testReportId: String!, $offset: Int, $limit: Int) {\n  testSetReports(testReportId: $testReportId, offset: $offset, limit: $limit) {\n    id\n    name\n    testSetName\n    numberOfTcsPassed\n    numberOfTcsFailed\n    totalTcs\n    status\n    testRunId\n    testCaseInfo {\n      testCaseName\n      status\n    }\n    normalizeData {\n      editedBy\n      editedAt\n      IsSuccess\n    }\n    deleteTestsData {\n      editedBy\n      editedAt\n      IsSuccess\n    }\n    ignoreTestsData {\n      editedBy\n      editedAt\n      IsSuccess\n    }\n  }\n}"}'
+        timestamp: 2024-08-22T16:25:35.778205683+05:30
+    resp:
+        status_code: 401
+        header:
+            Access-Control-Allow-Credentials: "true"
+            Access-Control-Allow-Origin: '*'
+            Access-Control-Expose-Headers: Link
+            Content-Length: "17"
+            Content-Type: text/plain; charset=utf-8
+            Date: Thu, 22 Aug 2024 10:55:35 GMT
+            Vary: Origin
+            X-Content-Type-Options: nosniff
+        body: |
+            token is expired
+        status_message: Unauthorized
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-08-22T16:25:37.785548232+05:30
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1724324137
+curl: |-
+    curl --request POST \
+      --url http://localhost:8083/query \
+      --header 'Accept: */*' \
+      --header 'Sec-Ch-Ua-Mobile: ?0' \
+      --header 'Referer: http://localhost:3000/' \
+      --header 'Accept-Encoding: gzip,deflate,br,zstd' \
+      --header 'Accept-Language: en-GB,en' \
+      --header 'Sec-Gpc: 1' \
+      --header 'Keploy-Test-Id: test-23' \
+      --header 'Sec-Fetch-Mode: cors' \
+      --header 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML' \
+      --header 'Sec-Fetch-Site: same-site' \
+      --header 'Origin: http://localhost:3000' \
+      --header 'Sec-Fetch-Dest: empty' \
+      --header 'Connection: keep-alive' \
+      --header 'Sec-Ch-Ua-Platform: "macOS"' \
+      --header 'Sec-Ch-Ua: "Not/A)Brand";v="8","Chromium";v="126","Brave";v="126"' \
+      --header 'Keploy-Test-Set-Id: newApp' \
+      --header 'Content-Type: application/json' \
+      --header 'Host: localhost:8083' \
+      --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IiIsImVtYWlsIjoic2FydGhha0BrZXBsb3kuaW8iLCJyb2xlIjoiQURNSU4iLCJzdGF0dXMiOiJBQ1RJVkUiLCJjaWQiOiJrZXBsb3kuaW8iLCJmZWF0dXJlRmxhZ3MiOnsiRU5URVJQUklTRV9DT05TT0xFIjp0cnVlfSwiZXhwIjoxNzIyMDEwMzY4fQ.2vZrCIYzF_d54JKjwk1aFee7d0naLfHJqkZTgbM9yD0' \
+      --data '{"operationName":"GetTestSetReports","variables":{"testReportId":"df24e41b-a3e9-46ed-bd8a-ec96cd5e6d6f"},"query":"query GetTestSetReports($testReportId: String!, $offset: Int, $limit: Int) {\n  testSetReports(testReportId: $testReportId, offset: $offset, limit: $limit) {\n    id\n    name\n    testSetName\n    numberOfTcsPassed\n    numberOfTcsFailed\n    totalTcs\n    status\n    testRunId\n    testCaseInfo {\n      testCaseName\n      status\n    }\n    normalizeData {\n      editedBy\n      editedAt\n      IsSuccess\n    }\n    deleteTestsData {\n      editedBy\n      editedAt\n      IsSuccess\n    }\n    ignoreTestsData {\n      editedBy\n      editedAt\n      IsSuccess\n    }\n  }\n}"}'
