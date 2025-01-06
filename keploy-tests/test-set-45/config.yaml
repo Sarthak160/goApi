@@ -1,0 +1,6 @@
+preScript: ""
+postScript: ""
+template: {}
+mockRegistry:
+    mock: 23bbd81b46426e91a878e4ce6b3707c7381dab9c121283f1b0816e50ad570aa3
+    app: api-server
